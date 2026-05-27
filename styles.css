@@ -134,6 +134,7 @@ body {
 
 .hero-avatar {
     margin-bottom: calc(var(--spacing-unit) * 2);
+    position: relative;
 }
 
 .avatar-placeholder {
@@ -149,6 +150,16 @@ body {
     font-weight: 700;
     color: white;
     box-shadow: var(--shadow-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3);
     animation: float 3s ease-in-out infinite;
 }
 
@@ -610,6 +621,7 @@ body {
     font-size: 1rem;
     font-weight: 600;
     color: white;
+    word-break: break-word;
 }
 
 /* Footer */
@@ -655,6 +667,12 @@ body {
 
     .contact-item {
         min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-value {
+        font-size: 0.9rem;
     }
 
     .hero-buttons {
@@ -664,6 +682,11 @@ body {
 
     .btn {
         width: 100%;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -697,6 +720,34 @@ body {
     .project-card,
     .why-card {
         padding: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .contact {
+        padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 1);
+    }
+
+    .contact-item {
+        padding: calc(var(--spacing-unit) * 1);
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+        margin-bottom: calc(var(--spacing-unit) * 0.5);
+    }
+
+    .contact-label {
+        font-size: 0.8rem;
+    }
+
+    .contact-value {
+        font-size: 0.8rem;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
     }
 }
 
