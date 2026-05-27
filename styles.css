@@ -577,11 +577,21 @@ body {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     min-width: 180px;
+    cursor: pointer;
+    border: 2px solid transparent;
 }
 
 .contact-item:hover {
     background: rgba(0, 102, 204, 0.2);
     transform: translateY(-5px);
+    border-color: rgba(0, 102, 204, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+.contact-item[href^="mailto:"]:hover {
+    background: rgba(220, 53, 69, 0.2);
+    border-color: rgba(220, 53, 69, 0.5);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
 }
 
 .contact-icon {
