@@ -1,238 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Kale - IT Specialist Portfolio</title>
-    <meta name="description" content="IT Specialist in System Integration - Portfolio showcasing Linux, Networking, and IT Infrastructure skills. Ausbildung candidate in Germany.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Kale - IT Specialist Portfolio</title>
+  <meta name="description" content="IT Specialist in System Integration — Portfolio showcasing Linux, C Programming, Bash, Networking and IoT. Ausbildung candidate for Germany.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── VIDEO SECTION ─────────────────────────────── */
+    .video-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 100%);
+    }
+    .video-section h2 { text-align: center; margin-bottom: 12px; }
+    .video-subtitle {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+    .video-embed-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid #30363d;
+    }
+    .video-embed-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-cta {
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+    .video-cta a { color: #58a6ff; text-decoration: none; }
+    .video-cta a:hover { text-decoration: underline; }
+
+    /* ── SKILL ICONS GRID ──────────────────────────── */
+    .skill-icons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .skill-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .skill-icon-item:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+    }
+    .skill-emoji { font-size: 1.8rem; line-height: 1; }
+    .skill-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      color: #8b949e;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── PROJECT CARDS IMPROVED ────────────────────── */
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn-sm {
+      display: inline-block;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-sm:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-github {
+      background: #21262d;
+      color: #e6edf3;
+      border: 1px solid #30363d;
+    }
+    .btn-demo {
+      background: #238636;
+      color: #ffffff;
+      border: 1px solid #2ea043;
+    }
+    .btn-youtube {
+      background: #cc0000;
+      color: #ffffff;
+      border: 1px solid #ff0000;
+    }
+
+    /* Featured project badge */
+    .project-featured-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #f7b731, #f9ca24);
+      color: #1a1a1a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .project-card.featured {
+      border: 1px solid #f7b731;
+      background: linear-gradient(135deg, rgba(247,183,49,0.05), rgba(0,0,0,0));
+    }
+    .project-card.featured:hover {
+      border-color: #f9ca24;
+      box-shadow: 0 8px 30px rgba(247,183,49,0.15);
+    }
+
+    /* ── CURRENTLY LEARNING ────────────────────────── */
+    .learning-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .learning-tag {
+      background: rgba(88,166,255,0.1);
+      border: 1px solid #1f6feb;
+      color: #58a6ff;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* ── CONTACT YOUTUBE ───────────────────────────── */
+    .video-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: rgba(204,0,0,0.08);
+      border: 1px solid rgba(204,0,0,0.3);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+      margin-top: 12px;
+    }
+    .video-contact-item:hover { border-color: #cc0000; }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">YK</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#why-me">Why Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-avatar">
-                    <img src="my%20image%20on%20tie.jpg" alt="Yash Kale - IT Specialist" class="profile-photo">
-                </div>
-                <h1>Hi, I'm Yash Kale</h1>
-                <p class="subtitle">An IT Enthusiast on a Journey to Build Myself</p>
-                <p class="description">Aspiring Fachinformatiker für Systemintegration | Linux • Networking • IT Infrastructure | Self-Taught Developer</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am an aspiring IT Professional from India with a great interest in Linux systems, Networks and IT infrastructure.</p>
-                    <p>My journey in this field started very early when I built my first computer using Raspberry Pi 3 Model-B in 8th grade - a project that ignited my passion for hands-on technic[...]</p>
-                    <p>I'm a self-taught person who learns 80-90% of things myself through books and the internet. I'm deeply curious about how technology works, from transistors to processors, an[...]</p>
-                    <p>Currently, I am preparing for an Ausbildung (vocational training) as an IT Specialist in System Integration in Germany while improving my German language skills and expandin[...]</p>
-                    <p>I enjoy learning by building new projects, solving complex problems, and continuously improving myself. I'm ready to bring dedication, discipline, and practical knowledge to[...]</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Strengths</h3>
-                    <ul class="skill-list">
-                        <li>Autodidact (Self-Learner) Mindset</li>
-                        <li>Discipline and Consistency</li>
-                        <li>Problem Solving</li>
-                        <li>Adaptability</li>
-                        <li>Technical Curiosity</li>
-                        <li>Team Work</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <ul class="skill-list">
-                        <li>Linux (Debian)</li>
-                        <li>Networking Fundamentals</li>
-                        <li>VPN Configuration</li>
-                        <li>TCP/IP</li>
-                        <li>Scripting (PowerShell, Bash)</li>
-                        <li>Git & Github</li>
-                        <li>Windows Administration</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Areas for Growth</h3>
-                    <ul class="skill-list">
-                        <li>Advanced Networking</li>
-                        <li>German Language Development</li>
-                        <li>System Administration</li>
-                        <li>Cloud Technologies</li>
-                        <li>Enterprise IT Infrastructure</li>
-                        <li>Python Programming</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Me for Ausbildung Section -->
-    <section id="why-me" class="why-me">
-        <div class="container">
-            <h2>Why Choose Me for Ausbildung?</h2>
-            <div class="why-me-grid">
-                <div class="why-card">
-                    <div class="why-icon">🚀</div>
-                    <h3>Self-Motivated</h3>
-                    <p>I've taught myself 80% of my technical skills through dedicated self-study, demonstrating my commitment and passion for IT.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">💼</div>
-                    <h3>Practical Experience</h3>
-                    <p>Real hands-on projects including building computers from scratch, configuring VPNs, and setting up Linux systems.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🎯</div>
-                    <h3>Goal Oriented</h3>
-                    <p>Clear focus on becoming a skilled IT System Integration specialist with continuous improvement mindset.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🌍</div>
-                    <h3>Culturally Adaptable</h3>
-                    <p>From India to Germany - I'm eager to learn German, embrace German work culture, and contribute to your team.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Network Setup & VPN Configuration</h3>
-                        <span class="project-tag">Networking</span>
-                    </div>
-                    <p>Built and configured a private VPN environment using OpenVPN with proper TCP/UDP protocols and networking fundamentals.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">TCP/UDP</span>
-                        <span class="tech-badge">OpenVPN</span>
-                        <span class="tech-badge">Networking</span>
-                    </div>
-                    <a href="#" class="project-link">Learn More →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                    <!-- iPaaS Edge Hub Project -->
-<div class="project-card">
-  <div class="project-header">
-    <h3>Mini-iPaaS Edge Monitoring Hub</h3>
-    <span class="project-tag">IoT</span>
-    <span class="project-tag">Systems</span>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-brand">YK</div>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#video-resume">Video Resume</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#why-me">Why Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-  <p>
-    Built a lightweight IoT monitoring system on Raspberry Pi 3 — 
-    a C program reads Linux log file sizes using POSIX stat() system calls, 
-    a Bash wrapper orchestrates the process with professional error handling 
-    (set -euo pipefail), and live hardware stats are sent as a JSON payload 
-    to Discord via cURL Webhook API.
-  </p>
-  <div class="project-tags">
-    <span>C Programming</span>
-    <span>Bash</span>
-    <span>REST API</span>
-    <span>cURL</span>
-    <span>Linux</span>
-    <span>Raspberry Pi</span>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <img src="my%20image%20on%20tie.jpg" alt="Yash Kale - IT Specialist" class="profile-photo">
+      </div>
+      <h1>Hi, I'm Yash Kale</h1>
+      <p class="subtitle">System Integration Enthusiast — Building Reliable, Automated &amp; Scalable Solutions</p>
+      <p class="description">
+        Aspiring Fachinformatiker für Systemintegration | Linux · C Programming · Bash · IoT · Networking
+        <br>Self-Taught Developer · Ready to relocate to Germany · Learning German daily
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="https://youtu.be/Xi6Ed8yoJnc" target="_blank" class="btn btn-secondary">▶ Watch Video Resume</a>
+        <a href="mailto:webcrafters071@gmail.com" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
   </div>
-  <a href="https://github.com/techcrafter03/ipass-edge-hub" 
-     target="_blank">View on GitHub →</a>
-</div> <h3>Raspberry Pi 3 Computer Project</h3>
-                        <span class="project-tag">Hardware</span>
-                    </div>
-                    <p>Built and configured a complete Raspberry Pi 3 computer from scratch, installed Linux (Debian), set up SSH access, and configured the system for remote administration.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Linux (Debian)</span>
-                        <span class="tech-badge">SSH Setup</span>
-                        <span class="tech-badge">System Config</span>
-                    </div>
-                    <a href="#" class="project-link">Learn More →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Web Crafters Agency Initiative</h3>
-                        <span class="project-tag">From Scratch</span>
-                    </div>
-                    <p>Started a small web development initiative focused on learning development workflows, project organization, and client-oriented thinking in a professional environment.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Project Organization</span>
-                        <span class="tech-badge">Web Development</span>
-                        <span class="tech-badge">Business Skills</span>
-                    </div>
-                    <a href="#" class="project-link">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-subtitle">Let's discuss your IT infrastructure needs and opportunities</p>
-            <div class="contact-methods">
-                <a href="mailto:webcrafters071@gmail.com" class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">webcrafters071@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/yash-kale-509b92311" class="contact-item" target="_blank" rel="noopener noreferrer">
-                    <span class="contact-icon">💼</span>
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">Yash Kale</span>
-                </a>
-                <a href="https://github.com/techcrafter03" class="contact-item" target="_blank" rel="noopener noreferrer">
-                    <span class="contact-icon">🔗</span>
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">techcrafter03</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I am an 18-year-old IT enthusiast from India with deep interest in Linux systems, networking,
+          system integration, and building real infrastructure projects from scratch.
+        </p>
+        <p>
+          My journey started in 8th grade when I had no money for a proper computer. I took a
+          <strong>Raspberry Pi 3</strong> — a computer the size of a credit card — and turned it into my own
+          Linux machine. No teacher. No course. Just curiosity, Google, and the will to understand how
+          things work at a fundamental level.
+        </p>
+        <p>
+          Since then I've configured WireGuard VPN servers, written C programs that talk directly to
+          the Linux kernel via system calls, built professional Bash scripts with full error handling,
+          and integrated live hardware data with cloud APIs. I also founded
+          <strong>Web Crafters Agency</strong> to develop real web projects for local businesses.
+        </p>
+        <p>
+          I am actively preparing for an <strong>Ausbildung as Fachinformatiker für Systemintegration
+          in Germany</strong> — studying German daily and ready to relocate. My visa documents are prepared
+          and I can begin the process immediately after signing a contract.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Yash Kale. All rights reserved. | Aspiring IT Specialist in System Integration</p>
-        </div>
-    </footer>
+<!-- Video Resume Section -->
+<section id="video-resume" class="video-section">
+  <div class="container">
+    <h2>🎬 Video Resume</h2>
+    <p class="video-subtitle">
+      Watch my 5-minute video resume — includes a live demo of the Mini-iPaaS system running on Raspberry Pi 3
+    </p>
+    <div class="video-embed-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/Xi6Ed8yoJnc"
+        title="Yash Kale — Video Resume | Fachinformatiker Systemintegration"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-cta">
+      Watch on YouTube: <a href="https://youtu.be/Xi6Ed8yoJnc" target="_blank">https://youtu.be/Xi6Ed8yoJnc</a>
+    </p>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- Skills Section -->
+<section id="skills" class="skills">
+  <div class="container">
+    <h2>Skills &amp; Expertise</h2>
+
+    <!-- Visual tech icons grid -->
+    <div class="skill-icons-grid">
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🐧</span>
+        <span class="skill-name">Linux</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">💻</span>
+        <span class="skill-name">Bash</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">⚙️</span>
+        <span class="skill-name">C Programming</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🍓</span>
+        <span class="skill-name">Raspberry Pi</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🌐</span>
+        <span class="skill-name">Networking</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🔒</span>
+        <span class="skill-name">VPN / WireGuard</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🗄️</span>
+        <span class="skill-name">SQLite</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">⏱️</span>
+        <span class="skill-name">systemd</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🔗</span>
+        <span class="skill-name">REST APIs</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">📦</span>
+        <span class="skill-name">Git &amp; GitHub</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🌍</span>
+        <span class="skill-name">SSH</span>
+      </div>
+      <div class="skill-icon-item">
+        <span class="skill-emoji">🏗️</span>
+        <span class="skill-name">System Integration</span>
+      </div>
+    </div>
+
+    <!-- Detailed skills columns -->
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Core Strengths</h3>
+        <ul class="skill-list">
+          <li>Self-directed learning mindset</li>
+          <li>Discipline and consistency</li>
+          <li>Root-cause problem solving</li>
+          <li>Adaptability under pressure</li>
+          <li>Technical curiosity</li>
+          <li>Documentation &amp; attention to detail</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Technical Skills</h3>
+        <ul class="skill-list">
+          <li>Linux (Debian / Raspbian 64-bit)</li>
+          <li>C Programming — POSIX system calls</li>
+          <li>Bash scripting (set -euo pipefail)</li>
+          <li>WireGuard &amp; OpenVPN networking</li>
+          <li>systemd timers &amp; services</li>
+          <li>REST API integration via cURL</li>
+          <li>SQLite database logging</li>
+          <li>Git, GitHub, SSH, TCP/IP</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Currently Learning</h3>
+        <div class="learning-grid">
+          <span class="learning-tag">🇩🇪 German (B1 → B2)</span>
+          <span class="learning-tag">Advanced Networking</span>
+          <span class="learning-tag">Cloud Technologies</span>
+          <span class="learning-tag">Python Scripting</span>
+          <span class="learning-tag">Enterprise IT Infrastructure</span>
+          <span class="learning-tag">System Administration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+
+      <!-- PROJECT 1: iPass (FEATURED) -->
+      <div class="project-card featured">
+        <div class="project-featured-badge">★ FEATURED PROJECT</div>
+        <div class="project-header">
+          <h3>Mini-iPaaS Edge Monitoring Hub</h3>
+          <span class="project-tag">IoT</span>
+          <span class="project-tag">Systems</span>
+          <span class="project-tag">C Programming</span>
+        </div>
+        <p>
+          A fully autonomous IoT monitoring system running on Raspberry Pi 3 — a C engine reads
+          Linux log file sizes via <code>stat()</code> system calls, a Bash wrapper with
+          <code>set -euo pipefail</code> collects live hardware stats from <code>/proc/</code> and
+          <code>/sys/</code>, builds a JSON payload, and fires it to Discord via cURL Webhook API.
+          A systemd timer runs the pipeline automatically every 5 minutes. All snapshots are
+          stored in a SQLite database for trend analysis.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">C / POSIX</span>
+          <span class="tech-badge">Bash</span>
+          <span class="tech-badge">systemd</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">cURL</span>
+          <span class="tech-badge">Discord API</span>
+          <span class="tech-badge">Raspberry Pi 3</span>
+          <span class="tech-badge">Linux ARM64</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/techcrafter03/ipass-edge-hub" target="_blank" class="btn-sm btn-github">⚙ GitHub Repo</a>
+          <a href="https://youtu.be/Xi6Ed8yoJnc" target="_blank" class="btn-sm btn-youtube">▶ Live Demo Video</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: WireGuard VPN -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>WireGuard VPN Server (PiVPN)</h3>
+          <span class="project-tag">Networking</span>
+          <span class="project-tag">Security</span>
+        </div>
+        <p>
+          Configured a secure WireGuard VPN server on Raspberry Pi 3 using PiVPN. Set up port
+          forwarding on the home router, generated cryptographic key pairs, configured the
+          <code>wg0</code> interface, and connected remote devices via the encrypted tunnel
+          on UDP port 51820. Demonstrated with QR code client provisioning.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">WireGuard</span>
+          <span class="tech-badge">PiVPN</span>
+          <span class="tech-badge">Linux Networking</span>
+          <span class="tech-badge">UDP / Port Forwarding</span>
+          <span class="tech-badge">Raspberry Pi</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/techcrafter03" target="_blank" class="btn-sm btn-github">⚙ GitHub Profile</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Raspberry Pi Computer -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Raspberry Pi 3 — First Linux Computer</h3>
+          <span class="project-tag">Hardware</span>
+          <span class="project-tag">Linux</span>
+        </div>
+        <p>
+          Built my first computer from scratch using a Raspberry Pi 3 Model B in 8th grade.
+          Installed Raspbian (Debian-based Linux), configured SSH for remote access, set up
+          user permissions, and learned the Linux command line, filesystem hierarchy, and
+          system administration fundamentals. Later migrated to 64-bit Raspbian Bookworm for
+          ARM64 support.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">Raspbian 64-bit</span>
+          <span class="tech-badge">SSH</span>
+          <span class="tech-badge">Linux CLI</span>
+          <span class="tech-badge">ARM64</span>
+          <span class="tech-badge">System Config</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/techcrafter03/Hello-world" target="_blank" class="btn-sm btn-github">⚙ My Story</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Web Crafters -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Web Crafters Agency</h3>
+          <span class="project-tag">Web Dev</span>
+          <span class="project-tag">Business</span>
+        </div>
+        <p>
+          Founded Web Crafters Agency in June 2024 — a web development initiative focused on
+          building landing pages and websites for local businesses including dental clinics and
+          fitness coaches in Pune and Mumbai. Developed client-facing work, managed outreach,
+          and built a professional web presence.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">HTML &amp; CSS</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Web Design</span>
+          <span class="tech-badge">Client Work</span>
+        </div>
+        <div class="project-links">
+          <a href="https://techcrafter03.github.io/portfolio/" target="_blank" class="btn-sm btn-github">⚙ Portfolio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why Me Section -->
+<section id="why-me" class="why-me">
+  <div class="container">
+    <h2>Why Choose Me for Ausbildung?</h2>
+    <div class="why-me-grid">
+      <div class="why-card">
+        <div class="why-icon">🚀</div>
+        <h3>Self-Motivated Builder</h3>
+        <p>I taught myself Linux, C, Bash, networking and API integration — all hands-on, all from scratch. No classroom required.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>Real Working Projects</h3>
+        <p>Not just tutorials — I built a live IoT monitoring system on real hardware that sends automated alerts every 5 minutes right now.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>Problem Solver Under Pressure</h3>
+        <p>Diagnosed a 32-bit/64-bit OS incompatibility, reflashed hardware mid-project, recovered from power cuts — and kept building.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🇩🇪</div>
+        <h3>Committed to Germany</h3>
+        <p>Learning German daily. Visa documents prepared. Ready to relocate and integrate into German work culture immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Get In Touch</h2>
+    <p class="contact-subtitle">Open for Ausbildung Fachinformatiker Systemintegration — Available August/September 2026</p>
+    <div class="contact-methods">
+      <a href="mailto:webcrafters071@gmail.com" class="contact-item">
+        <span class="contact-icon">📧</span>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">webcrafters071@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/yash-kale-509b92311" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon">💼</span>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">Yash Kale</span>
+      </a>
+      <a href="https://github.com/techcrafter03" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon">⚙️</span>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">techcrafter03</span>
+      </a>
+      <a href="https://youtu.be/Xi6Ed8yoJnc" class="contact-item video-contact-item" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon">▶</span>
+        <span class="contact-label">Video Resume</span>
+        <span class="contact-value">Watch on YouTube</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>
+      &copy; 2026 Yash Kale · Built from scratch · All rights reserved
+      <br>
+      <small>
+        <a href="https://github.com/techcrafter03/ipass-edge-hub" target="_blank" style="color:#58a6ff;text-decoration:none;">⚙ iPass Project</a>
+        &nbsp;·&nbsp;
+        <a href="https://youtu.be/Xi6Ed8yoJnc" target="_blank" style="color:#cc0000;text-decoration:none;">▶ Video Resume</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/techcrafter03" target="_blank" style="color:#58a6ff;text-decoration:none;">GitHub</a>
+      </small>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
