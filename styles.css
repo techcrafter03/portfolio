@@ -371,11 +371,13 @@ body {
 }
 
 .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-bottom: calc(var(--spacing-unit) * 1.5);
-    gap: calc(var(--spacing-unit) * 1);
+   .project-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;    
+}
 }
 
 .project-card h3 {
