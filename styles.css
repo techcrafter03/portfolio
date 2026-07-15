@@ -371,13 +371,11 @@ body {
 }
 
 .project-header {
-   .project-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;    
-}
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;    
 }
 
 .project-card h3 {
