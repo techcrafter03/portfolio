@@ -101,7 +101,7 @@ function type() {
   } else {
     el.textContent = current.substring(0, j++);
   }
-  if (!isDeleting && j === current.length + 1) {
+  if (!isDeleting && j === current.length) {
     isDeleting = true;
     setTimeout(type, 1800);
     return;
